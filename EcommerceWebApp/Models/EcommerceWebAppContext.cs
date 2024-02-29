@@ -1,6 +1,6 @@
 ﻿namespace EcommerceWebApp.Models
 {
-    public class User
+    public class EcommerceWebAppContext
     {
     }
 }
