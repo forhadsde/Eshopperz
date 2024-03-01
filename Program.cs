@@ -1,4 +1,11 @@
-﻿namespace EcommerceWebApp;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
+
+using EcommerceWebApp.Models;
+
+namespace EcommerceWebApp;
 
 public class Program
 {
@@ -8,11 +15,12 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
-
-        var app = builder.Build();
         builder.Services.AddControllers();
         builder.Services.AddDbContext<EcommerceWebAppContext>(options =>
-            options.UseSqlite(builder.Configuration.GetConnectionString("Connection")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
+        var app = builder.Build();
+
+        
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
@@ -20,7 +28,7 @@ public class Program
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
-
+        app.MapControllers();
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 
