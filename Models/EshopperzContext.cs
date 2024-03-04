@@ -2,11 +2,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Eshopperz.Models;
-
+using System.Collections.Generic;
 
 namespace Eshopperz.Models
 {
-    public class EshopperzContext : DbContext
+    public class EshopperzContext : IdentityDbContext<IdentityUser>
     {
         public EshopperzContext(DbContextOptions<EshopperzContext> options) : base(options)
         {
