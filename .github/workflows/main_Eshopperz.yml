@@ -58,6 +58,10 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      
+      - name: Restore .NET tools
+        run: dotnet tool restore
+      
 
       - name: dotnet ef tool install
         run: dotnet tool install -g dotnet-ef --version 7.0.14
