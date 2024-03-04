@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 namespace Eshopperz.Models
 {
     public class Program
@@ -8,6 +9,7 @@ namespace Eshopperz.Models
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddControllers();
             builder.Services.AddDbContext<EshopperzContext>(options =>
             options.UseSqlite(builder.Configuration.GetConnectionString("Connection")));
