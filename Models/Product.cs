@@ -16,7 +16,8 @@ namespace Eshopperz.Models
         public string? ProductName { get; set; }
 
         public double? Price { get; set; }
-
+        public int quantity { get; set; }
+        
         [ForeignKey("Category")]
 
         public int CategoryId { get; set; }

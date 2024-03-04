@@ -42,10 +42,10 @@ namespace eshopperz.Migrations
                     b.Property<string>("CategoryName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("OrderItem")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("CategoryId");
+
+                    b.HasIndex("CategoryName")
+                        .IsUnique();
 
                     b.ToTable("Categories");
                 });
@@ -99,10 +99,15 @@ namespace eshopperz.Migrations
                     b.Property<DateOnly>("ProductOrderDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("OrderProductId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("OrderId", "ProductId", "ProductOrderDate");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("OrderItems");
                 });
@@ -124,6 +129,9 @@ namespace eshopperz.Migrations
 
                     b.Property<string>("ProductName")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("quantity")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("ProductId");
 
@@ -160,6 +168,25 @@ namespace eshopperz.Migrations
                     b.Navigation("Cart");
 
                     b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("Eshopperz.Models.OrderItem", b =>
+                {
+                    b.HasOne("Eshopperz.Models.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Eshopperz.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Eshopperz.Models.Product", b =>

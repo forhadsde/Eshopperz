@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Eshopperz.Models
-{
-    public class UpdateRoleModel
+
+public class UpdateRoleModel
     {
+        public string? RoleId { get; set; }
+        public string? NewRoleName { get; set; }
     }
-}

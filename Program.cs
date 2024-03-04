@@ -14,6 +14,9 @@ namespace Eshopperz.Models
             builder.Services.AddDbContext<EshopperzContext>(options =>
             options.UseSqlite(builder.Configuration.GetConnectionString("Connection")));
             // Add services to the container.
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<EshopperzContext>().AddDefaultTokenProviders();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

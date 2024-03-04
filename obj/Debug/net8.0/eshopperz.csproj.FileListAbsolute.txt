@@ -305,3 +305,6 @@ C:/Users/User/Documents/GitHub/eshopperz/obj/Debug/net8.0/ref/eshopperz.dll
 /Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll
 /Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll
 /Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/eshopperz.staticwebassets.runtime.json
+/Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/BouncyCastle.Cryptography.dll
+/Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/MailKit.dll
+/Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/MimeKit.dll

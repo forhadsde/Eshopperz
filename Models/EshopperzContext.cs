@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Eshopperz.Models;
 
+
 namespace Eshopperz.Models
 {
     public class EshopperzContext : DbContext
@@ -18,13 +19,26 @@ namespace Eshopperz.Models
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<Eshopperz.Models.Admin> Admin { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
+            modelBuilder.Entity<Product>()
+            .HasOne(p => p.Category)
+            .WithMany()  // Assuming you have a navigation property 'Products' in your Category class
+            .HasForeignKey(p => p.CategoryId);
+
+            modelBuilder.Entity<Category>()
+                .HasIndex(c => c.CategoryName) // Create an index for the Name property
+                .IsUnique();
+
+
             modelBuilder.Entity<OrderItem>()
                 .HasKey(OrderItem => new { OrderItem.OrderId, OrderItem.ProductId, OrderItem.ProductOrderDate  });
             
+
+
             // Other entity configurations...
 
             base.OnModelCreating(modelBuilder);

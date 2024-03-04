@@ -21,6 +21,7 @@ namespace Eshopperz.Models
 
         public List<Product>? Products { get; set; }
 
+        [ForeignKey("Cart")]
         public int? CartId { get; set; }
 
         public Cart? Cart { get; set; }
