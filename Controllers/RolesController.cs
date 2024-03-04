@@ -14,7 +14,7 @@ namespace Eshopperz.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class RolesController : ControllerBase
     {
         private readonly RoleManager<IdentityRole> _roleManager;
@@ -48,21 +48,21 @@ namespace Eshopperz.Controllers
             return Ok(role);
         }
 
-        public async Task<bool> IsUserInAdminRole(string userId)
-        {
-            // Retrieve the user
-            var user = await _userManager.FindByIdAsync(userId);
+        // public async Task<bool> IsUserInAdminRole(string userId)
+        // {
+        //     // Retrieve the user
+        //     var user = await _userManager.FindByIdAsync(userId);
 
-            // Check if the user exists
-            if (user != null)
-            {
-                // Check if the user is in the "Admin" role
-                return await _userManager.IsInRoleAsync(user, "Admin");
-            }
+        //     // Check if the user exists
+        //     if (user != null)
+        //     {
+        //         // Check if the user is in the "Admin" role
+        //         return await _userManager.IsInRoleAsync(user, "Admin");
+        //     }
 
-            // Return false if the user doesn't exist or if an error occurred
-            return false;
-        }
+        //     // Return false if the user doesn't exist or if an error occurred
+        //     return false;
+        // }
         [HttpPost]
         public async Task<IActionResult> CreateRole([FromBody] CreateRoleRequest request)
         {

@@ -309,3 +309,8 @@ C:/Users/User/Documents/GitHub/eshopperz/obj/Debug/net8.0/ref/eshopperz.dll
 /Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/MailKit.dll
 /Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/MimeKit.dll
 /Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/reza/Documents/GitHub/Eshopperz/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/reza/Documents/GitHub/Eshopperz/obj/Debug/net8.0/eshopperz.MvcApplicationPartsAssemblyInfo.cs

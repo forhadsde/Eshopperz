@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Eshopperz.Controllers;
+
 namespace Eshopperz.Models
 {
     public class Program
@@ -14,9 +15,9 @@ namespace Eshopperz.Models
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            
 
             builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
             builder.Services.AddControllers();
             builder.Services.AddDbContext<EshopperzContext>(options =>
             options.UseSqlite(builder.Configuration.GetConnectionString("Connection")));
@@ -50,7 +51,7 @@ namespace Eshopperz.Models
                         ValidAudience = builder.Configuration["Jwt:Issuer"],
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
                     };
-                    });
+                });
 
             builder.Services.AddControllersWithViews();
 
@@ -62,6 +63,11 @@ namespace Eshopperz.Models
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
+            }
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
             app.MapControllers();
             app.UseHttpsRedirection();
