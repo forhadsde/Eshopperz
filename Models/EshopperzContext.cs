@@ -18,6 +18,7 @@ namespace Eshopperz.Models
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Eshopperz.Models.Admin> Admin { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,7 +29,7 @@ namespace Eshopperz.Models
 
             base.OnModelCreating(modelBuilder);
         }
-        public DbSet<Eshopperz.Models.Admin> Admin { get; set; } = default!;
+        
 
 
     }
