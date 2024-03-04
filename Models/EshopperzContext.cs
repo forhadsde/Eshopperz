@@ -33,11 +33,19 @@ namespace Eshopperz.Models
                 .HasIndex(c => c.CategoryName) // Create an index for the Name property
                 .IsUnique();
 
-
+            //many to many relationship configuration
             modelBuilder.Entity<OrderItem>()
                 .HasKey(OrderItem => new { OrderItem.OrderId, OrderItem.ProductId, OrderItem.ProductOrderDate  });
             
+            modelBuilder.Entity<OrderItem>()
+            .HasOne(OrderItem => OrderItem.Product)
+            .WithMany()
+            .HasForeignKey(OrderItem => OrderItem.ProductId);
 
+        modelBuilder.Entity<OrderItem>()
+            .HasOne(OrderItem => OrderItem.Order)
+            .WithMany()
+            .HasForeignKey(OrderItem => OrderItem.OrderId);
 
             // Other entity configurations...
 
