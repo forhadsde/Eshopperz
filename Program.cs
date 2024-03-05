@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Eshopperz.Controllers;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
+
 
 namespace Eshopperz.Models
 {
@@ -20,8 +22,13 @@ namespace Eshopperz.Models
             builder.Services.AddSwaggerGen();
             builder.Services.AddControllers();
             builder.Services.AddDbContext<EshopperzContext>(options =>
-            options.UseSqlite(builder.Configuration.GetConnectionString("Connection")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING")));
 
+            builder.Services.AddStackExchangeRedisCache(options =>
+            {
+            options.Configuration = builder.Configuration["AZURE_REDIS_CONNECTIONSTRING"];
+            options.InstanceName = "SampleInstance";
+            });
 
             // Add services to the container.
             builder.Services.AddIdentity<IdentityUser, IdentityRole>()
@@ -33,6 +40,11 @@ namespace Eshopperz.Models
 
             builder.Services.AddScoped<EmailService>();
             builder.Services.AddScoped<RolesController>();
+
+            var jwtSection = builder.Configuration.GetSection("Jwt");
+            builder.Services.Configure<JwtSettings>(jwtSection);
+            var jwtSettings = jwtSection.Get<JwtSettings>();
+            var key = Encoding.ASCII.GetBytes(builder.Configuration["JWT_KEY"]);
 
             builder.Services.AddAuthentication(options =>
             {
