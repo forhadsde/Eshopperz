@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/reza/Documents/GitHub/Eshopperz/eshopperz.csproj": {}
+    "/Users/reza/Documents/GitHub/Eshopperzdev/eshopperz.csproj": {}
   },
   "projects": {
-    "/Users/reza/Documents/GitHub/Eshopperz/eshopperz.csproj": {
+    "/Users/reza/Documents/GitHub/Eshopperzdev/eshopperz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/reza/Documents/GitHub/Eshopperz/eshopperz.csproj",
+        "projectUniqueName": "/Users/reza/Documents/GitHub/Eshopperzdev/eshopperz.csproj",
         "projectName": "eshopperz",
-        "projectPath": "/Users/reza/Documents/GitHub/Eshopperz/eshopperz.csproj",
+        "projectPath": "/Users/reza/Documents/GitHub/Eshopperzdev/eshopperz.csproj",
         "packagesPath": "/Users/reza/.nuget/packages/",
-        "outputPath": "/Users/reza/Documents/GitHub/Eshopperz/obj/",
+        "outputPath": "/Users/reza/Documents/GitHub/Eshopperzdev/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/reza/.nuget/NuGet/NuGet.Config"
