@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JRqkzb0jJsQTTwtzaMkkHVOh+3UDv+kg5ORrw0ZplN4EqYxjOlzPt7C7a0UQrgv8iFTz2nclW18Y++tZWlVQ7w==",
+  "dgSpecHash": "SzXrCwrPIdrctthXKWVJTx+E0+n1UkRUNLeMfxN7OeUAqBXXfLzhpAKCXrksPb2spmoCQ/akJ4Khi6Y1bPcwmw==",
   "success": true,
   "projectFilePath": "/Users/reza/Documents/GitHub/Eshopperz/eshopperz.csproj",
   "expectedPackageFiles": [
@@ -96,7 +96,6 @@
     "/Users/reza/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/reza/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/microsoft.extensions.caching.memory/8.0.0/microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
-    "/Users/reza/.nuget/packages/microsoft.extensions.caching.stackexchangeredis/8.0.2/microsoft.extensions.caching.stackexchangeredis.8.0.2.nupkg.sha512",
     "/Users/reza/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
@@ -142,7 +141,6 @@
     "/Users/reza/.nuget/packages/nuget.projectmodel/6.3.1/nuget.projectmodel.6.3.1.nupkg.sha512",
     "/Users/reza/.nuget/packages/nuget.protocol/6.3.1/nuget.protocol.6.3.1.nupkg.sha512",
     "/Users/reza/.nuget/packages/nuget.versioning/6.3.1/nuget.versioning.6.3.1.nupkg.sha512",
-    "/Users/reza/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "/Users/reza/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -163,7 +161,6 @@
     "/Users/reza/.nuget/packages/sqlitepclraw.core/2.1.6/sqlitepclraw.core.2.1.6.nupkg.sha512",
     "/Users/reza/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
     "/Users/reza/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.6/sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
-    "/Users/reza/.nuget/packages/stackexchange.redis/2.6.122/stackexchange.redis.2.6.122.nupkg.sha512",
     "/Users/reza/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
