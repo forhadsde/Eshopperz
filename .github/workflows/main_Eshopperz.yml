@@ -64,7 +64,7 @@ jobs:
       
 
       - name: dotnet ef tool install
-        run: dotnet tool install -g dotnet-ef --version 7.0.14
+        run: dotnet tool install -g dotnet-ef --version 8.0.2
 
       - name: dotnet ef database update
         run: dotnet ef migrations bundle --runtime linux-x64 -o ${{env.DOTNET_ROOT}}/myapp/migrate
