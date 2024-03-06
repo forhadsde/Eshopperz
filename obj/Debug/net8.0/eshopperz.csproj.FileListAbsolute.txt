@@ -605,3 +605,7 @@ C:/Users/User/Documents/GitHub/eshopperz/obj/Debug/net8.0/ref/eshopperz.dll
 /Users/reza/Documents/GitHub/Eshopperzdev/obj/Debug/net8.0/eshopperz.pdb
 /Users/reza/Documents/GitHub/Eshopperzdev/obj/Debug/net8.0/eshopperz.genruntimeconfig.cache
 /Users/reza/Documents/GitHub/Eshopperzdev/obj/Debug/net8.0/ref/eshopperz.dll
+/Users/reza/Documents/GitHub/Eshopperzdev/bin/Debug/net8.0/Serilog.dll
+/Users/reza/Documents/GitHub/Eshopperzdev/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/reza/Documents/GitHub/Eshopperzdev/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/Users/reza/Documents/GitHub/Eshopperzdev/bin/Debug/net8.0/Serilog.Sinks.File.dll

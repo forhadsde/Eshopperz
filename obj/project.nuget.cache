@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UQxzmzgN42FC5ggE3HQKKwqLSL+DLhOZRUCh7b794xYey62QqV838gY1RcBXfsnh6qoK4V5THKuMXPeBQ9zxMw==",
+  "dgSpecHash": "Au5Isj+ehnx4eiLDbHzdDUcTAnFMWkEQlREtqeDqofLcdzVV2Gh4YHxCYsSYFa63ptTOq9Clm4+hK+Sh4kMM0Q==",
   "success": true,
   "projectFilePath": "/Users/reza/Documents/GitHub/Eshopperzdev/eshopperz.csproj",
   "expectedPackageFiles": [
@@ -157,6 +157,10 @@
     "/Users/reza/.nuget/packages/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "/Users/reza/.nuget/packages/serilog/3.1.1/serilog.3.1.1.nupkg.sha512",
+    "/Users/reza/.nuget/packages/serilog.extensions.logging/8.0.0/serilog.extensions.logging.8.0.0.nupkg.sha512",
+    "/Users/reza/.nuget/packages/serilog.sinks.console/5.0.1/serilog.sinks.console.5.0.1.nupkg.sha512",
+    "/Users/reza/.nuget/packages/serilog.sinks.file/5.0.0/serilog.sinks.file.5.0.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.6/sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "/Users/reza/.nuget/packages/sqlitepclraw.core/2.1.6/sqlitepclraw.core.2.1.6.nupkg.sha512",
     "/Users/reza/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",

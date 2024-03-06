@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Eshopperz.Models;
+using Serilog;
 
 // Define the namespace for the CartsController class within the eshopperz namespace.
 namespace eshopperz.Controllers
@@ -29,95 +30,118 @@ namespace eshopperz.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Cart>>> GetCarts()
         {
-            return await _context.Carts.ToListAsync();
+            try
+            {
+                return await _context.Carts.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "An error occurred while retrieving all carts.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
 
         // Action to retrieve a specific cart by its ID.
         [HttpGet("{id}")]
         public async Task<ActionResult<Cart>> GetCart(int id)
         {
-            var cart = await _context.Carts.FindAsync(id);
-
-            if (cart == null)
+            try
             {
-                return NotFound();
-            }
+                var cart = await _context.Carts.FindAsync(id);
 
-            return cart;
+                if (cart == null)
+                {
+                    return NotFound();
+                }
+
+                return cart;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, $"An error occurred while retrieving cart with ID {id}.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
 
         // Action to update an existing cart.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCart(int id, Cart cart)
         {
-            if (id != cart.CartId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(cart).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CartExists(id))
+                if (id != cart.CartId)
                 {
-                    return NotFound();
+                    return BadRequest();
                 }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return Ok(new { message = $"New Cart Updated with CartID {cart.CartId}" });
+                _context.Entry(cart).State = EntityState.Modified;
+
+                await _context.SaveChangesAsync();
+
+                return Ok(new { message = $"Cart with CartID {cart.CartId} updated successfully." });
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, $"An error occurred while updating cart with ID {id}.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
 
         // Action to create a new cart.
-        
         [HttpPost]
         public async Task<ActionResult<Cart>> PostCart(Cart cart)
         {
-            // Checking if the customer associated with the cart exists in the Customer Table
-            var existingCustomer = await _context.Customers.FindAsync(cart.CustomerId);
-            if (existingCustomer == null)
+            try
             {
-                // Returning a BadRequest response if the customer does not exist
-                return Conflict($"Customer with the provided {cart.CustomerId} does not exist.");
+                var existingCustomer = await _context.Customers.FindAsync(cart.CustomerId);
+                if (existingCustomer == null)
+                {
+                    Log.Warning($"Customer with the provided ID {cart.CustomerId} does not exist. Cart creation failed.");
+                    return Conflict($"Customer with the provided {cart.CustomerId} does not exist.");
+                }
+
+                var existingCart = await _context.Carts.FindAsync(cart.CartId);
+                if (existingCart != null)
+                {
+                    Log.Warning($"A cart with the provided CartId {cart.CartId} already exists. Cart creation failed.");
+                    return Conflict($"A cart with the provided CartId {cart.CartId} already exists.");
+                }
+
+                _context.Carts.Add(cart);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetCart", new { id = cart.CartId }, cart);
             }
-              // Checking if a cart with the provided CartId already exists
-            var existingCart = await _context.Carts.FindAsync(cart.CartId);
-            if (existingCart != null)
+            catch (Exception ex)
             {
-                // Returning a Conflict response if the cart already exists
-                return Conflict($"A cart with the provided CartId {cart.CartId} already exists.");
+                Log.Error(ex, "An error occurred during cart creation.");
+                return StatusCode(500, "An unexpected error occurred.");
             }
-
-            // Adding the new cart entry to the context
-            _context.Carts.Add(cart);
-            await _context.SaveChangesAsync();
-
-             // Returning a response indicating successful creation of the cart
-            return CreatedAtAction("GetCart", new { id = cart.CartId }, cart);
         }
 
         // Action to delete a specific cart by its ID.
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCart(int id)
         {
-            var cart = await _context.Carts.FindAsync(id);
-            if (cart == null)
+            try
             {
-                return Conflict($"A Cart with the ID {id} cannot be found");
+                var cart = await _context.Carts.FindAsync(id);
+                if (cart == null)
+                {
+                    Log.Warning($"A Cart with the ID {id} cannot be found. Cart deletion failed.");
+                    return Conflict($"A Cart with the ID {id} cannot be found.");
+                }
+
+                _context.Carts.Remove(cart);
+                await _context.SaveChangesAsync();
+
+                return NoContent();
             }
-
-            _context.Carts.Remove(cart);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            catch (Exception ex)
+            {
+                Log.Error(ex, $"An error occurred while deleting cart with ID {id}.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
 
         // Private method to check if a cart with a given ID exists.
