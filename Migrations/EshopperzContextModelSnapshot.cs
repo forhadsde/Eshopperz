@@ -96,16 +96,16 @@ namespace eshopperz.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateOnly>("ProductOrderDate")
+                    b.Property<DateOnly>("DateOfOrder")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("OrderProductId")
+                    b.Property<int>("OrderItemId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("OrderId", "ProductId", "ProductOrderDate");
+                    b.HasKey("OrderId", "ProductId", "DateOfOrder");
 
                     b.HasIndex("ProductId");
 
@@ -130,7 +130,7 @@ namespace eshopperz.Migrations
                     b.Property<string>("ProductName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("quantity")
+                    b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ProductId");
