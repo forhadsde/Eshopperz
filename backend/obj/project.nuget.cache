@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Au5Isj+ehnx4eiLDbHzdDUcTAnFMWkEQlREtqeDqofLcdzVV2Gh4YHxCYsSYFa63ptTOq9Clm4+hK+Sh4kMM0Q==",
+  "dgSpecHash": "noaWOS3rg7TRy34qZaz9n2s0mlPwkHtbuvm6z/0NkUw0SjaoANtdTb00R7LhvcZhuYI6IPZoyzdO/okUCedjuA==",
   "success": true,
-  "projectFilePath": "/Users/reza/Documents/GitHub/Eshopperzdev/eshopperz.csproj",
+  "projectFilePath": "/Users/reza/Documents/GitHub/Coursework/Eshopperz/backend/eshopperz.csproj",
   "expectedPackageFiles": [
     "/Users/reza/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/reza/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",

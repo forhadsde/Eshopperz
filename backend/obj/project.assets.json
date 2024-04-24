@@ -13347,11 +13347,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/reza/Documents/GitHub/Eshopperzdev/eshopperz.csproj",
+      "projectUniqueName": "/Users/reza/Documents/GitHub/Coursework/Eshopperz/backend/eshopperz.csproj",
       "projectName": "eshopperz",
-      "projectPath": "/Users/reza/Documents/GitHub/Eshopperzdev/eshopperz.csproj",
+      "projectPath": "/Users/reza/Documents/GitHub/Coursework/Eshopperz/backend/eshopperz.csproj",
       "packagesPath": "/Users/reza/.nuget/packages/",
-      "outputPath": "/Users/reza/Documents/GitHub/Eshopperzdev/obj/",
+      "outputPath": "/Users/reza/Documents/GitHub/Coursework/Eshopperz/backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/reza/.nuget/NuGet/NuGet.Config"
