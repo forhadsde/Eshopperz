@@ -1,2 +1,0 @@
-2024-03-06 10:34:49.833 +00:00 [ERR] User registration failed. Errors: Microsoft.AspNetCore.Identity.IdentityError
-2024-03-06 10:38:59.714 +00:00 [WRN] Failed login attempt for user: forhad.softwaredeveloper@gmail.comwer

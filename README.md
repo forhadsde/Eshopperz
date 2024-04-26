@@ -2,12 +2,6 @@
 
 Eshopperz serves as the backend server for a cutting-edge ecommerce application, aiming to provide individuals with an outstanding and secure shopping experience through modern and efficient functionalities.
 
-## URL
-
-GitHub: https://github.com/FORHAD-REZA1996/Eshopperz
-
-Azure: https://eshopperz.azurewebsites.net
-
 ## Features
 
 - **Customer Registration**: Users can sign up by providing their email and password.
@@ -44,7 +38,6 @@ The project is structured as follows:
 - Logs: Manages the Serilog logging library for efficient event tracking and error recording.
 - wwwroot: Contains deployment files.
 - Migrations: Contains Migration files.
-- Eshopperz.db: Locally contains Database.
 
 ## Database Schema
 
